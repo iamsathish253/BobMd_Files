@@ -11,6 +11,7 @@ function createGenericRecords(exeCutionContext){
     debugger;
 
     //sample
+    // Sample1
 
     var formContext=exeCutionContext.getFormContext();
 
