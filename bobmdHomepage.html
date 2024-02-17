@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 
 <header>
+   <link rel="stylesheet" type="test/css" href="/bdf_bobHomePage.css">
+
+     <!-- <script src="/bdf_bobMdHomePage.js" type="text/js"></script> -->
+<!-- 
+    <Linking Html and Css in Crm WebResources -->
+    <!-- <link rel="stylesheet" type="text/css" href="../WebResources/bdf_bobMdHomePageCss">  -->
+
+    <!-- Linking html and Css in Crm -->
+
+    <!-- <script src="../WebResources/bdf_bdf_bobMdHomePageJs" type="text/js"></script> -->
+
     <style>
-        .main_container{
-           text-align: center;
-        }
-        
-        .main_buttons_container{
-            
-            display: flex;
-            height: 80px; 
-            margin-top: 10px;
-            margin-bottom: 10px;
-            column-gap: 20px;
-            align-items: center;
-            align-content: center;
-            align-content: space-between;
-           
-            flex-wrap: wrap;
-            justify-content:space-evenly
-        }
+
+.main_container{
+    text-align: center;
+ }
+ 
+ .main_buttons_container{
+     
+     display: flex;
+     height: 80px; 
+     margin-top: 10px;
+     margin-bottom: 10px;
+     column-gap: 20px;
+     align-items: center;
+     align-content: space-between;
+     flex-wrap: wrap;
+     justify-content:space-evenly
+ }
 
 
 
-        .project{
-            height: 70px;
-            width: 200px;
-            color: white;
-            background-color: brown;
-            padding: 10px;
-            margin: 10px;
-        }
+ .project{
+     height: 70px;
+     width: 200px;
+     color: white;
+     background-color: brown;
+     padding: 10px;
+     margin: 10px;
+ }
 
-        .Generic{
-            height: 70px;
-            width: 200px;
-            color: white;
-            background-color: brown;
-            padding: 10px;
-            margin: 10px;
-        }
+ .Generic{
+     height: 70px;
+     width: 200px;
+     color: white;
+     background-color: brown;
+     padding: 10px;
+     margin: 10px;
+ }
 
-        .Articals{
-            height: 70px;
-            width: 200px;
-            color: white;
-            background-color: brown;
-            padding: 10px;
-            margin: 10px;
-        }
+ .Articals{
+     height: 70px;
+     width: 200px;
+     color: white;
+     background-color: brown;
+     padding: 10px;
+     margin: 10px;
+ }
     </style>
-
-    <script>
-        function navigateTo()
-        {
-
-            var naviagteUrl=window.page.Xrm.Utility.getGlobalContext().globalContext.getClientUrl();
-            console.log(naviagteUrl);
-        }
-    </script>
 
 </header>
 <body>
@@ -67,7 +68,7 @@
         <div class="main_buttons_container">
 
             <div>
-                <button class="project" onclick="navigateTo()">Project</button>
+                <button class="project" onclick="navigateTo()" type="button">Project</button>
             </div>
             <div>
                 <button class="Generic">Generic</button>
