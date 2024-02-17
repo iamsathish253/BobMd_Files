@@ -10,6 +10,8 @@ function createGenericRecords(exeCutionContext){
 
     debugger;
 
+    //sample
+
     var formContext=exeCutionContext.getFormContext();
 
     var projectId=formContext.data.entity.getId().replace("{","").replace("}","");
