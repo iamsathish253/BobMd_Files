@@ -51,6 +51,15 @@
         }
     </style>
 
+    <script>
+        function navigateTo()
+        {
+
+            var naviagteUrl=window.page.Xrm.Utility.getGlobalContext().globalContext.getClientUrl();
+            console.log(naviagteUrl);
+        }
+    </script>
+
 </header>
 <body>
     <div class="main_container">
@@ -58,7 +67,7 @@
         <div class="main_buttons_container">
 
             <div>
-                <button class="project">Project</button>
+                <button class="project" onclick="navigateTo()">Project</button>
             </div>
             <div>
                 <button class="Generic">Generic</button>
