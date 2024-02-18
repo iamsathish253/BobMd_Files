@@ -57,6 +57,32 @@ git branch -d branch branch Name
 git branch -D branch name
 
 
+// grideRelated Topics
 
+How you will get Records when gride i s load
+
+var grideRows = formContext.getControl().getGrid().getRows() - List of Rows in Gride return type is object
+
+var totalNumberofRows=grideRows.getLength()-Return Type is Number 
+
+var TotalAmoutnt;
+
+for(int i=0;i<totalNumberofRows;i++)
+{
+
+// Go throught Each and Every Record
+
+var singleRow=totalNumberofRows.get(i) - Return Type Object it Contains attributes and Data
+
+var amount=singleRow.getAttribute(logical Name).getValue;
+TotalAmoutnt+=amount
+
+}
+
+How can i get Selected Records from Gride
+
+formContext.getControl("").getGrid().getSelectedRows();
+
+Same iteration like above
 
 
