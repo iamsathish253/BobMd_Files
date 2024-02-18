@@ -68,9 +68,14 @@ function addChangeAttribute(exeCutionContext){
    var name =formContext.getAttribute("bdf_name").getValue();
 
    if(name=="Sathish")
-   formContext.getAttribute("bdf_item").setValue(name);
-  else
-  return;
+   {
+    formContext.getAttribute("bdf_item").setValue(name);
+   }else{
+    return;
+   }
+   
+
+ 
 
 
 }
