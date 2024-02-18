@@ -1,42 +1,41 @@
-function addGrideFieldChange(exeCutionContext){
+function addOnGrideFieldChange(exeCutionContext){
 
     debugger;
-
+        
     var formContext=exeCutionContext.getFormContext();
-
-    
     var gride=formContext.getControl("bdf_unique_genericGride");
-
-    if(gride==null){
-        setTimeout(addGrideFieldChange(exeCutionContext), 3000);
+      
+     
+    if (gride == null) {
+        setTimeout(addOnGrideFieldChange(exeCutionContext), 3000);
         return;
     }
 
-    formContext.getControl("bdf_unique_genericGride").addOnLoad(gideLoad);
 
-    
-
-
+    formContext.getControl("bdf_unique_genericGride").addOnLoad(addOnGideLoad);
    
 }
 
-function gideLoad(exeCutionContext){
+function addOnGideLoad(exeCutionContext){
 
   
-
     var formContext=exeCutionContext.getFormContext();
     // var collection=formContext.getControl("bdf_unique_genericGride").getGrid().getRows();
 
 
-    var collection=formContext.getControl("bdf_unique_genericGride").getGrid().getRows();
+    var gridRows=formContext.getControl("bdf_unique_genericGride").getGrid().getRows();
 
-    var TotalRecords=collection.getLength();
+    var TotalRows=gridRows.getLength();
+
+    if(TotalRows==null){
+        return;
+    }
     console.log(TotalRecords)
 
     for (let index = 0; index < TotalRecords; index++) {
-        const element = collection.get(index);
+        const singleRow = gridRows.get(index);
 
-        element.getAttribute("bdf_name").addOnChange(addChangeAttribute);
+        singleRow.getAttribute("bdf_name").addOnChange(addOnChangeAttribute);
 
         
     }
@@ -62,18 +61,25 @@ function gideLoad(exeCutionContext){
 }
 
 
-function addChangeAttribute(exeCutionContext){
+function addOnChangeAttribute(exeCutionContext){
+
    var formContext=exeCutionContext.getFormContext();
 
-   var name =formContext.getAttribute("bdf_name").getValue();
+   var projectName =formContext.getAttribute("bdf_name").getValue();
 
-   if(name=="Sathish")
+   if(projectName==null){
+    return;
+
+   }
+   
+   if(projectName=="Sathish")
    {
     formContext.getAttribute("bdf_item").setValue(name);
    }else{
     return;
    }
    
+  
 
  
 

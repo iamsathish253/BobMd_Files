@@ -21,5 +21,6 @@ function navigateToGenericList(){
     var pageInput={
         pageType: "entitylist",
         entityName: "bdf_generics"}
+        
     parent.Xrm.Navigation.navigateTo(pageInput).then(successCallback,errorCallback);
     } 
