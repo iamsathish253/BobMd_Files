@@ -1,4 +1,4 @@
-function navigateToProjectList(){
+function navigateToProductsList(){
 
 
 // var globalContext = parent.Xrm.Utility.getGlobalContext();
@@ -14,7 +14,7 @@ parent.Xrm.Navigation.navigateTo(pageInput).then(successCallback,errorCallback);
 
 }
     
-function navigateToGenericList(){
+function navigateToSubProductsList(){
     // var globalContext = parent.Xrm.Utility.getGlobalContext();
     // var link=globalContext.getCurrentAppUrl();
     // var entityId="3800c0b1-e7ae-4b86-b75f-f59f99cd8c0b"

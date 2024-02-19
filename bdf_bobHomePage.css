@@ -17,7 +17,7 @@
 
 
 
- .project{
+ .Products{
      height: 70px;
      width: 200px;
      color: white;
@@ -26,7 +26,7 @@
      margin: 10px;
  }
 
- .Generic{
+ .SubProducts{
      height: 70px;
      width: 200px;
      color: white;
@@ -35,7 +35,7 @@
      margin: 10px;
  }
 
- .Articals{
+ .category{
      height: 70px;
      width: 200px;
      color: white;
