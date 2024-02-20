@@ -1,89 +1,64 @@
-function addOnGrideFieldChange(exeCutionContext){
+function addOnSubproductGridLoad(exeCutionContext){
+
+    debugger; 
+
+    var formContext=exeCutionContext.getFormContext();
+
+    formContext.getControl("bdf_unique_genericGride").addOnLoad(function(exeCutionContext){
+
+        var formContext=exeCutionContext.getFormContext();
+        var totalGridRecords=formContext.getControl("bdf_unique_genericGride").getGrid().getRows();
+
+        for(var i=0;i<totalGridRecords.getLength();i++){
+
+            var gridSingleRow=totalGridRecords.get(i);
+            gridSingleRow.getAttribute("bdf_name").addOnChange(function(exeCutionContext){
+                
+                var formContext=exeCutionContext.getFormContext()
+             
+                let subProductName=formContext.getAttribute("bdf_name").getValue();
+
+                if(subProductName==null){
+                    return;
+                }else{
+                     console.log(subProductName)
+                }
+            })
+
+        }
+    });
+   
+}
+
+
+
+function addCatgoryGridOnLoad(exeCutionContext){
 
     debugger;
-        
+
     var formContext=exeCutionContext.getFormContext();
-    var gride=formContext.getControl("bdf_unique_genericGride");
-      
-     
-    if (gride == null) {
-        setTimeout(addOnGrideFieldChange(exeCutionContext), 3000);
-        return;
-    }
+    formContext.getControl("Catogry").addOnLoad(function(exeCutionContext){
 
+       var formContext=exeCutionContext.getFormContext();
 
-    formContext.getControl("bdf_unique_genericGride").addOnLoad(addOnGideLoad);
-   
+        var grideTotalRows=formContext.getControl("Catogry").getGrid().getRows();
+
+        for(var i=0;i<grideTotalRows.getLength();i++)
+        {
+
+            var grideSingleRow=grideTotalRows.get(i);
+            grideSingleRow.getAttribute("bdf_name").addOnChange(function(exeCutionContext){
+                var formContext=exeCutionContext.getFormContext();
+
+                let catogryName=formContext.getAttribute("bdf_name").getValue();
+
+                if(catogryName==null){
+                    return
+                }else{
+                    console.log(catogryName);
+                }
+            })
+        }
+    });
 }
-
-function addOnGideLoad(exeCutionContext){
-
-  
-    var formContext=exeCutionContext.getFormContext();
-    // var collection=formContext.getControl("bdf_unique_genericGride").getGrid().getRows();
-
-
-    var gridRows=formContext.getControl("bdf_unique_genericGride").getGrid().getRows();
-
-    var TotalRows=gridRows.getLength();
-
-    if(TotalRows==null){
-        return;
-    }
-    console.log(TotalRecords)
-
-    for (let index = 0; index < TotalRecords; index++) {
-        const singleRow = gridRows.get(index);
-
-        singleRow.getAttribute("bdf_name").addOnChange(addOnChangeAttribute);
-
-        
-    }
-
-    // formContext.getControl("bdf_unique_genericGride").getGrid().getRows().getAll().forEach(function (row, i)
-    // {
-    //     var name = row.getAttribute("bdf_name").getValue();
-    //     console.log(name)
-
-    //     var rowId=row.getData().getEntity().getId();
-
-    //     console.log(rowId)
-
-    //     // var EntityName=row.getEntityName();
-
-    //     //var name=EntityName.getAttribute("bdf_name").getValue()
-        
-    //     // console.log(EntityName)
-
-        
-    // });
-
-}
-
-
-function addOnChangeAttribute(exeCutionContext){
-
-   var formContext=exeCutionContext.getFormContext();
-
-   var projectName =formContext.getAttribute("bdf_name").getValue();
-
-   if(projectName==null){
-    return;
-
-   }
-   
-   if(projectName=="Sathish")
-   {
-    formContext.getAttribute("bdf_item").setValue(name);
-   }else{
-    return;
-   }
-   
-  
-
- 
-
-
-}
-
 
